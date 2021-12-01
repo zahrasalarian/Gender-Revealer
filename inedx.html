@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href = "avc_label_style.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <div id = "container">
+    <div id = "first">
+      <div class = "grid-container">
+        <div class="grid-item">
+            <head type='head' class='title1'>Mr. or Ms.?</head>
+        </div>
+        <!-- add spaceholder -->
+        <div class="grid-item">
+          <label for="sh1">Name</label>  
+          <input type = "spaceholder" class = "spaceholder1"></input>
+        </div>
+        <!-- add checkbox -->
+        <div>
+            <input type="radio" id="female_checkbox" name="drone" value="Female"
+                checked>
+            <label for="female_checkbox">Female</label>
+          </div>
+          
+          <div>
+            <input type="radio" id="male_checkbox" name="drone" value="Male"
+                checked>
+            <label for="male_checkbox">Male</label>
+          </div>
+
+        <!-- add buttons> -->
+        <!-- submit button -->
+        <div class="grid-item">
+          <button type = "button" class = "submit_button" class = "small_btn">Submit</button>
+        </div>
+
+        <!-- save button -->
+        <div class="grid-item">
+            <button type = "button" class = "save_button" class = "small_btn">Save</button>
+        </div>
+
+        <!-- clear button -->
+        <div class="grid-item">
+            <button type = "button" class = "clear_button" class = "small_btn">Clear</button>
+        </div>
+      </div>
+
+      <div class = "grid-container">
+
+        <!-- right side -->
+        <div class="grid-item">
+            <head type='head' class='title2'>Prediction</head>
+        </div>
+
+        <div class="grid-item">
+            <p class="gender_content">You can see user bio here.</p>
+        </div>
+
+        <div class="grid-item">
+            <p class="probability_content">You can see user bio here.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<script src="./js/index.js"></script>
+
+</body>
+</html>
