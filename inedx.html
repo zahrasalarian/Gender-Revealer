@@ -12,8 +12,10 @@
   <div id = "container">
     <div id = "first">
       <div class = "grid-container">
-        <div class="grid-item">
-            <head type='head' class='title1'>Mr. or Ms.?</head>
+        <div class="inner-conianer-item">
+          <h1>Mr. or Ms.?</h1>
+          <p id="gender-status" style="display: flex;justify-content: center;"></p>
+          <p id="gender-percentage" style="display: flex;justify-content: center;"></p>
         </div>
         <!-- add spaceholder -->
         <div class="grid-item">
@@ -43,26 +45,42 @@
         <div class="grid-item">
             <button type = "button" class = "save_button" class = "small_btn">Save</button>
         </div>
-
-        <!-- clear button -->
-        <div class="grid-item">
-            <button type = "button" class = "clear_button" class = "small_btn">Clear</button>
-        </div>
       </div>
 
       <div class = "grid-container">
 
         <!-- right side -->
-        <div class="grid-item">
-            <head type='head' class='title2'>Prediction</head>
+        <div class="inner-conianer-item">
+          <h1>Prediction</h1>
+          <p id="gender-status" style="display: flex;justify-content: center;"></p>
+          <p id="gender-percentage" style="display: flex;justify-content: center;"></p>
         </div>
 
         <div class="grid-item">
-            <p class="gender_content">You can see user bio here.</p>
+            <p class="gender_content">You can see user gender here.</p>
         </div>
 
         <div class="grid-item">
-            <p class="probability_content">You can see user bio here.</p>
+            <p class="probability_content">You can see gender probability here.</p>
+        </div>
+
+        <div class="container-item">
+          <div class="inner-container-item">
+              <div class="inner-conianer-item" style="border-style: dotted;border-width: 2px;padding: 5px;">
+                  <h1>Saved Answer</h1>
+              <div class="grid-item">
+                <p class="gender_saved">You can see saved user gender here.</p>
+              </div>
+      
+              <div class="grid-item">
+                  <p class="probability_saved">You can see saved gender probability here.</p>
+              </div>
+              <!-- clear button -->
+              <div class="grid-item">
+                <button type = "button" class = "clear_button" class = "small_btn">Clear</button>
+              </div>
+              </div>
+          </div>
         </div>
 
       </div>

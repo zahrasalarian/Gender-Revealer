@@ -4,6 +4,8 @@ const saveButton = document.querySelector('.save_button');
 const clearButton = document.querySelector('.clear_button');
 const gender = document.querySelector('.gender_content');
 const probability = document.querySelector('.probability_content');
+const savedGender = document.querySelector('.gender_saved');
+const savedProbability = document.querySelector('.probability_saved');
 const maleCheckbox = document.getElementById('male_checkbox');
 const femaleCheckbox = document.getElementById('female_checkbox');
 
@@ -25,26 +27,26 @@ async function getUserData(username) {
 }
 
 // set gender of a name
-function setGender(userData) {
+function setGender(userData, gender_obj) {
     if (userData.gender == null)
-        gender.innerHTML = `Sorry!!!`;
+        gender_obj.innerHTML = `Sorry!!!`;
     else
-        gender.innerHTML = userData.gender;
+        gender_obj.innerHTML = userData.gender;
 }
 
 // set probability of a gender prediction
-function setProbability(userData) {
+function setProbability(userData, prob_obj) {
     if (userData.probability == null)
-        probability.innerHTML = `Sorry!!!`;
+        prob_obj.innerHTML = `Sorry!!!`;
     else
-        probability.innerHTML = userData.probability;
+        prob_obj.innerHTML = userData.probability;
 }
 
 // fill user data in view .
-function extract_gender(userData) {
+function extract_gender(userData,) {
     console.log(userData);
-    setGender(userData);
-    setProbability(userData);
+    setGender(userData, gender);
+    setProbability(userData, probability);
 }
 
 // save user information
@@ -68,8 +70,11 @@ function saveGender() {
 }
 
 function display_saved_content(saved_userData){
-    // ye block jadid dorost kon
+    console.log(saved_userData);
+    setGender(saved_userData, savedGender);
+    setProbability(saved_userData, savedProbability);
 }
+
 // clear saved username
 async function clearHistory(e){
     let username = nameInput.value;
@@ -99,6 +104,10 @@ async function sendRequest(e) {
     userData = await getUserData(username);
     if (saved_userData != null) {
         display_saved_content(saved_userData);
+    }else{
+        display_saved_content({'name': '',
+                            "gender": '', 
+                            "probability": ''});
     }
     if (userData == null)
         return;

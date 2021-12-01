@@ -18,9 +18,10 @@ html,body {
 #first {
     border: 1px solid black;
     border-radius: 5px;
-    width: 35%;
-    height: 50vh;
+    width: 40%;
+    height: 70vh;
     margin-left: 10px;    
+    display: flex;
     justify-content: center;
 
 }
