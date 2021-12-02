@@ -4,12 +4,17 @@
     box-sizing: border-box;
 }
 
+/* set background and font settings */
 html,body {
     height: 100%;
     font-size: 1rem;
     background-image: url('../background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
+/* make a container of type flex for items */
 #container {
     display: flex;
     width: 50%;
@@ -17,8 +22,11 @@ html,body {
     margin-left: 370px;    
     margin-top: 100px;
     background-color: aliceblue;
+    opacity: 0.9;
+
 }
 
+/* the square containing items (submit and radion buttons etc)  */
 #first {
     border: 1px solid black;
     border-radius: 5px;
@@ -29,42 +37,17 @@ html,body {
     padding: 100px;
     padding-inline: 20px;
     justify-content: space-around; 
-
 }
 
-.grid_container {
-    border: 1px solid black;
-    display: flex;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: green;
-    justify-content: center;
-    padding: 10px;
-}
-
+/* shape and size of buttons */
 .small_btn {
     width: 120%;
     height: 100px;
 }
 
+/* place items in their columns and under each other */
 .grid-container {
     display: grid;
     grid-gap: 5px;
 }
 
-
-.spaceholder1 {
-  grid-column: 1 / 2;
-  grid-row: 1;
-}
-
-.b1 {
-  width: 120%;
-  height: 100px;
-  grid-column: 1 / 2;
-  grid-row: 3;
-}
-
-.title2 {
-  grid-column: 2 / 2;
-  grid-row: 1;
-}

@@ -50,7 +50,7 @@ function extract_gender(userData,) {
     setProbability(userData, probability);
 }
 
-// save user information
+// save user's information
 async function saveGender() {
     username = nameInput.value
     var gender = null
@@ -75,6 +75,7 @@ async function saveGender() {
         "probability": prob
     }
     window.localStorage.setItem(username, JSON.stringify(content_to_save));
+    display_saved_content(content_to_save)
 }
 
 // display saved gender
@@ -105,7 +106,7 @@ function checkInputFormat(name) {
     return standard.test(name);
 }
 
-// the process of sending data and fill it in view.
+// the process of sending request and display data in webpage.
 async function showGender(e) {
     console.log("clicked on submit");
     let username = nameInput.value;
