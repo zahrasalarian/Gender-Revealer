@@ -94,6 +94,8 @@ async function clearHistory(e){
     userData = await JSON.parse(window.localStorage.getItem(username));
     if (userData != null) {
         window.localStorage.removeItem(username);
+        savedGender.innerHTML = '';
+        savedProbability.innerHTML = '';
     }
     else{
         console.log('we didnt have it :(')
