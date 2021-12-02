@@ -29,16 +29,19 @@ async function getUserData(username) {
 
 // set gender of a name
 function setGender(userData, gender_obj) {
-    if (userData.gender == null)
+    if (userData.gender == null){
+        alert(`Sorry, we don't have this name in our database.`)
         gender_obj.innerHTML = `Sorry, we don't have this name in our database.`;
+    }
     else
         gender_obj.innerHTML = userData.gender;
 }
 
 // set probability of a gender prediction
 function setProbability(userData, prob_obj) {
-    if (userData.probability == null)
-        prob_obj.innerHTML = `Sorry, we don't have this name in our database.`;
+    if (userData.probability == null){
+        prob_obj.innerHTML = '';
+    }
     else
         prob_obj.innerHTML = userData.probability;
 }
@@ -114,6 +117,7 @@ async function showGender(e) {
     let username = nameInput.value;
     if (username == "" || checkInputFormat(username) != true) {
         console.log("name is null or in a wrong format");
+        alert("name is null or in a wrong format\n(you should only use english letters and spaces)")
         gender.innerHTML = "name is null or in a wrong format\n (you should only use english letters and spaces)"
         probability.innerHTML = ""
         return;
