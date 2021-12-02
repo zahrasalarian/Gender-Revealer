@@ -7,39 +7,43 @@
 html,body {
     height: 100%;
     font-size: 1rem;
+    background-image: url('../background.png');
 }
 
 #container {
     display: flex;
-    width: 100%;
+    width: 50%;
     justify-content: center;
+    margin-left: 370px;    
+    margin-top: 100px;
+    background-color: aliceblue;
 }
 
 #first {
     border: 1px solid black;
     border-radius: 5px;
-    width: 40%;
+    width: 100%;
     height: 70vh;
-    margin-left: 10px;    
     display: flex;
     justify-content: center;
+    padding: 100px;
+    padding-inline: 20px;
+    justify-content: space-around; 
 
 }
 
 .grid_container {
     border: 1px solid black;
     display: flex;
-    /* grid-template-columns: 50px 50px 50px; */
     grid-template-columns: repeat(2, 1fr);
-    /* grid-template-rows: 50px 50px; */
     background-color: green;
     justify-content: center;
     padding: 10px;
 }
 
 .small_btn {
-    width: 100%;
-    height: 50px;
+    width: 120%;
+    height: 100px;
 }
 
 .grid-container {
@@ -54,6 +58,8 @@ html,body {
 }
 
 .b1 {
+  width: 120%;
+  height: 100px;
   grid-column: 1 / 2;
   grid-row: 3;
 }

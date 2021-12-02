@@ -22,6 +22,7 @@ async function getUserData(username) {
         return Promise.reject(`Request failed with error ${response.status}`);
     } catch (e) {
         showErrorMessage(e);
+        // gender.innerHTML = 'An error occurred while sending request'
         console.log(e);
     }
 }
@@ -29,7 +30,7 @@ async function getUserData(username) {
 // set gender of a name
 function setGender(userData, gender_obj) {
     if (userData.gender == null)
-        gender_obj.innerHTML = `Sorry!!!`;
+        gender_obj.innerHTML = `Sorry, we don't have this name in our database.`;
     else
         gender_obj.innerHTML = userData.gender;
 }
@@ -37,7 +38,7 @@ function setGender(userData, gender_obj) {
 // set probability of a gender prediction
 function setProbability(userData, prob_obj) {
     if (userData.probability == null)
-        prob_obj.innerHTML = `Sorry!!!`;
+        prob_obj.innerHTML = `Sorry, we don't have this name in our database.`;
     else
         prob_obj.innerHTML = userData.probability;
 }
@@ -50,16 +51,23 @@ function extract_gender(userData,) {
 }
 
 // save user information
-function saveGender() {
+async function saveGender() {
     username = nameInput.value
     var gender = null
     if (maleCheckbox.checked) {
         gender = maleCheckbox.value
-    }else{
+        maleCheckbox.checked = false;
+        var prob = 100
+    }else if (femaleCheckbox.checked){
         gender = femaleCheckbox.value
-    }   
+        femaleCheckbox.checked = false;
+        var prob = 100
+    }else {
+        userData = await getUserData(username);
+        window.localStorage.setItem(username, JSON.stringify(userData));
+        return;
+    }
     console.log(gender) 
-    var prob = 100
 
     content_to_save = {
         "name": username, 
@@ -102,7 +110,9 @@ async function showGender(e) {
     console.log("clicked on submit");
     let username = nameInput.value;
     if (username == "" || checkInputFormat(username) != true) {
-        console.log("username was empty or in a wrong format");
+        console.log("name is null or in a wrong format");
+        gender.innerHTML = "name is null or in a wrong format"
+        probability.innerHTML = ""
         return;
     }
     e.preventDefault();
@@ -121,6 +131,7 @@ async function showGender(e) {
     extract_gender(userData);
 }
 
+// actions
 submitButton.addEventListener('click', showGender);
 saveButton.addEventListener('click', saveGender);
 clearButton.addEventListener('click', clearHistory);
