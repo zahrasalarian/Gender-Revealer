@@ -1,4 +1,4 @@
-const nameInput = document.querySelector('.spaceholder1');
+const nameInput = document.querySelector('.name_holder');
 const submitButton = document.querySelector('.submit_button');
 const saveButton = document.querySelector('.save_button');
 const clearButton = document.querySelector('.clear_button');
@@ -69,6 +69,7 @@ function saveGender() {
     window.localStorage.setItem(username, JSON.stringify(content_to_save));
 }
 
+// display saved gender
 function display_saved_content(saved_userData){
     console.log(saved_userData);
     setGender(saved_userData, savedGender);
@@ -90,12 +91,18 @@ async function clearHistory(e){
     }
 }
 
+// check input format
+function checkInputFormat(name) {
+    let standard = /^[a-z A-Z]+$/;
+    return standard.test(name);
+}
+
 // the process of sending data and fill it in view.
-async function sendRequest(e) {
+async function showGender(e) {
     console.log("clicked on submit");
     let username = nameInput.value;
-    if (username == "") {
-        console.log("username was empty");
+    if (username == "" || checkInputFormat(username) != true) {
+        console.log("username was empty or in a wrong format");
         return;
     }
     e.preventDefault();
@@ -114,7 +121,7 @@ async function sendRequest(e) {
     extract_gender(userData);
 }
 
-submitButton.addEventListener('click', sendRequest);
+submitButton.addEventListener('click', showGender);
 saveButton.addEventListener('click', saveGender);
 clearButton.addEventListener('click', clearHistory);
 

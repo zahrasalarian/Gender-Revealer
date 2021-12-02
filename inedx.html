@@ -17,33 +17,30 @@
           <p id="gender-status" style="display: flex;justify-content: center;"></p>
           <p id="gender-percentage" style="display: flex;justify-content: center;"></p>
         </div>
-        <!-- add spaceholder -->
-        <div class="grid-item">
-          <label for="sh1">Name</label>  
-          <input type = "spaceholder" class = "spaceholder1"></input>
+
+        <!-- add form -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="name_holder" id="name" name="name" maxlength="255" required />
         </div>
-        <!-- add checkbox -->
-        <div>
-            <input type="radio" id="female_checkbox" name="drone" value="Female"
-                checked>
-            <label for="female_checkbox">Female</label>
+
+        <!-- add radio button -->
+          <div class="radio-style">
+            <label for="genderOption1"><input type="radio" id="female_checkbox" name="gender" value="Female"/> Female</label>
           </div>
-          
-          <div>
-            <input type="radio" id="male_checkbox" name="drone" value="Male"
-                checked>
-            <label for="male_checkbox">Male</label>
-          </div>
+          <div class="radio-style">
+            <label for="genderOption2"><input type="radio" id="male_checkbox" name="gender" value="Male" > Male</label>
+          </div>    
 
         <!-- add buttons> -->
         <!-- submit button -->
         <div class="grid-item">
-          <button type = "button" class = "submit_button" class = "small_btn">Submit</button>
+          <button type = "submit" class = "submit_button" class = "small_btn">Submit</button>
         </div>
 
         <!-- save button -->
         <div class="grid-item">
-            <button type = "button" class = "save_button" class = "small_btn">Save</button>
+            <button type = "submit" class = "save_button" class = "small_btn">Save</button>
         </div>
       </div>
 
