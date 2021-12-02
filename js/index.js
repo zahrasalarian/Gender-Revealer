@@ -112,7 +112,7 @@ async function showGender(e) {
     let username = nameInput.value;
     if (username == "" || checkInputFormat(username) != true) {
         console.log("name is null or in a wrong format");
-        gender.innerHTML = "name is null or in a wrong format (you should only use english letters and spaces)"
+        gender.innerHTML = "name is null or in a wrong format\n (you should only use english letters and spaces)"
         probability.innerHTML = ""
         return;
     }
